@@ -2,23 +2,12 @@
 
 A structured LaTeX template for reports/books with reusable components, consistent styling, and a clear layout. The template separates content, layout, headers, styles, and reusable boxes to keep documents maintainable and easy to extend.
 
-![Cover Preview](cover-preview.png)
+<img src="cover-preview.png" alt="Cover Preview" width="100%">
 
-## Quick Start
-- Prerequisites: Install TeX Live or MiKTeX. For auto-builds, install `latexmk`.
-- Build: From the workspace root, run:
+## Quick Start (Windows)
+- Prerequisites: Install MiKTeX, Strawberry Perl. For auto-builds, install LaTeX Workshop extension in VS Code.
 
-```powershell
-latexmk -pdf main.tex
-```
-
-- Clean (optional):
-
-```powershell
-latexmk -c
-```
-
-The main entry point is `main.tex`. Generated PDFs and auxiliary files will be created alongside it.
+- The main entry point is `main.tex`. Generated PDFs and auxiliary files will be created alongside it.
 
 ## Project Structure
 - `main.tex`: Top-level document that assembles layout and sections.
@@ -72,75 +61,4 @@ In `Sections/main.tex`, list your sections in the desired order:
 ```
 
 ## Reusable Components (Copy & Paste)
-The template includes pre-written components you can drop into any section.
-
-### Question Box
-Add a question/exercise box with a title and body. First, ensure the template is loaded (typically via `Headers/lib.tex` or `Styles/global.sty`). Then use:
-
-```latex
-% In your section file
-\input{Templates/question-box}
-
-% Example usage
-\begin{questionbox}{Sample Question}
-State and prove the main theorem for this section.
-\end{questionbox}
-```
-
-If the environment is provided via `global.sty`, the `\input{Templates/question-box}` line may already be included at the top-level. Duplicate inputs are safe but unnecessary.
-
-### Highlighted Example/Note
-Define a simple highlighted block using a custom environment (often in `global.sty`). If already defined, use directly:
-
-```latex
-\begin{exampleblock}
-This is a highlighted example to draw attention.
-\end{exampleblock}
-```
-
-If you don’t have `exampleblock` yet, add it in `Styles/global.sty` (or copy from your pre-defined components) like:
-
-```latex
-% Styles/global.sty (snippet)
-\newenvironment{exampleblock}{\par\noindent\begingroup\bfseries}{\par\endgroup}
-```
-
-### Figure Template
-Standard figure with caption and label:
-
-```latex
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=0.8\linewidth]{Graphics/sample}
-	\caption{An illustrative figure.}
-	\label{fig:sample}
-\end{figure}
-```
-
-### Table Template
-
-```latex
-\begin{table}[ht]
-	\centering
-	\begin{tabular}{lcr}
-		\hline
-		Left & Center & Right \\
-		\hline
-		A & B & C \\
-		\hline
-	\end{tabular}
-	\caption{A simple table.}
-	\label{tab:simple}
-\end{table}
-```
-
-## Tips
-- Use `latexmk -pdf` for incremental builds while editing.
-- Keep environments/macros centralized in `global.sty` to avoid duplication.
-- Prefer `\input{...}` over `\include{...}` for fine-grained control unless large chapters.
-- Store all images in `Graphics/` for clean relative paths.
-
-## Troubleshooting
-- Missing packages: Ensure `Headers/lib.tex` includes required packages (e.g., `graphicx`, `xcolor`, `hyperref`).
-- Path issues: Confirm relative paths match your OS (Windows uses `\\`). LaTeX paths use forward slashes in commands and are OS-agnostic.
-- Build errors: Run `latexmk -pdf -interaction=nonstopmode main.tex` to see full logs.
+The template includes pre-written components in the `Templates/` folder you can drop into any section.
