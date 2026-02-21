@@ -114,7 +114,7 @@
         \bfseries
         \begin{tabular}{rl}
             \begin{picture}(25pt,15pt)
-                \put(0,-8pt){\includegraphics[width=20pt]{graphics/hcmut.png}}
+                \put(0,-8pt){\includegraphics[width=20pt]{Graphics/hcmut.png}}
             \end{picture}
             \begin{tabular}{l}
                 \ttfamily\@uniname  \\
@@ -130,7 +130,7 @@
                 \ttfamily\@deptname \\
             \end{tabular}
             \begin{picture}(25pt,15pt)
-                \put(0,-8pt){\includegraphics[width=20pt]{graphics/hcmut.png}}
+                \put(0,-8pt){\includegraphics[width=20pt]{Graphics/hcmut.png}}
             \end{picture}
         \end{tabular}
     }
@@ -143,7 +143,7 @@
                 \ttfamily\@deptname \\
             \end{tabular}
             \begin{picture}(25pt,15pt)
-                \put(0,-8pt){\includegraphics[width=20pt]{graphics/hcmut.png}}
+                \put(0,-8pt){\includegraphics[width=20pt]{Graphics/hcmut.png}}
             \end{picture}
         \end{tabular}
     }
@@ -164,7 +164,7 @@
 
         \MakeUppercase{\@deptname}
         \vfill
-        \includegraphics[scale=0.4]{graphics/hcmut.png}
+        \includegraphics[scale=0.4]{Graphics/hcmut.png}
         \vfill
         \begin{tabular}{c}
             \Large\@coursename                               \\
